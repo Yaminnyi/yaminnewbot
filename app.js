@@ -335,7 +335,7 @@ const handleMessage = (sender_psid, received_message) => {
       user_message = user_message.toLowerCase(); 
 
       switch(user_message) { 
-      case "hi":
+      case "Getstart":
           hiReply(sender_psid);
         break;
       case "mingalarbar":
@@ -499,7 +499,7 @@ function webviewTest(sender_psid){
 
 
 const hiReply =(sender_psid) => {
-  let response = {"text": "You sent hi message"};
+  let response = {"text": "Mingalarbar.How can I help you?"};
   callSend(sender_psid, response);
 }
 
