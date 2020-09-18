@@ -502,7 +502,7 @@ function webviewTest(sender_psid){
 
 
 const hiReply =(sender_psid) => {
-  let response = {"text": "You sent hi message"};
+  let response = {"text": "How can I help you?"};
   callSend(sender_psid, response);
 }
 
