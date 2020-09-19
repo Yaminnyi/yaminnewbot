@@ -499,7 +499,7 @@ function webviewTest(sender_psid){
 
 
 const handlePostback = (sender_psid, received_postback) => {
- let response = {"text": "Hello, How can I help you?"};
+ 
   let payload = received_postback.payload;
   switch(payload) {        
       case "Get Started":
