@@ -319,11 +319,7 @@ function handleQuickReply(sender_psid, received_message) {
 /**********************************************
 Function to Handle when user send text message
 ***********************************************/
-{ 
-  "get_started":{
-    "payload":"<GET_STARTED_PAYLOAD>"
-  }
-}
+
 
 const handleMessage = (sender_psid, received_message) => {
   //let message;
@@ -338,7 +334,11 @@ const handleMessage = (sender_psid, received_message) => {
       console.log('USER MESSAGE', user_message);
      
       user_message = user_message.toLowerCase(); 
-
+{ 
+  "get_started":{
+    "payload":"<GET_STARTED_PAYLOAD>"
+  }
+}
       switch(user_message) { 
       case "hi":
           hiReply(sender_psid);
