@@ -319,11 +319,6 @@ function handleQuickReply(sender_psid, received_message) {
 /**********************************************
 Function to Handle when user send text message
 ***********************************************/
-curl -X POST -H "Content-Type: application/json" -d '{ 
-"get_started":{
-    "payload":"GET_STARTED_PAYLOAD"
-}
-}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=PAGE_ACCESS_TOKEN" 
 
 const handleMessage = (sender_psid, received_message) => {
   //let message;
@@ -505,10 +500,16 @@ function webviewTest(sender_psid){
 
 
 
-
-const hiReply =(sender_psid) => {
-  let response = {"text": "How can I help you?"};
-  callSend(sender_psid, response);
+const handlePostback = (sender_psid, received_postback) => {
+ let response = {"text": "Hello, How can I help you?"};
+  let payload = received_postback.payload;
+  switch(payload) {        
+      case "Get Started":
+          showButtonReplyYes(sender_psid);
+        break;                
+      default:
+          defaultReply(sender_psid);
+  } 
 }
 
 const get_started =(sender_psid) => {
