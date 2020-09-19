@@ -319,6 +319,13 @@ function handleQuickReply(sender_psid, received_message) {
 /**********************************************
 Function to Handle when user send text message
 ***********************************************/
+var formData = {
+        "get_started":[
+        {
+            "payload":"USER_DEFINED_PAYLOAD"
+            }
+        ]
+};
 
 const handleMessage = (sender_psid, received_message) => {
   //let message;
