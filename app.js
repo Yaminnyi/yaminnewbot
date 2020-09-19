@@ -319,7 +319,11 @@ function handleQuickReply(sender_psid, received_message) {
 /**********************************************
 Function to Handle when user send text message
 ***********************************************/
-
+curl -X POST -H "Content-Type: application/json" -d '{ 
+"get_started":{
+    "payload":"GET_STARTED_PAYLOAD"
+}
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=PAGE_ACCESS_TOKEN" 
 
 const handleMessage = (sender_psid, received_message) => {
   //let message;
@@ -334,11 +338,7 @@ const handleMessage = (sender_psid, received_message) => {
       console.log('USER MESSAGE', user_message);
      
       user_message = user_message.toLowerCase(); 
-{ 
-  "get_started":{
-    "payload":"<GET_STARTED_PAYLOAD>"
-  }
-}
+
       switch(user_message) { 
       case "hi":
           hiReply(sender_psid);
