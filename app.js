@@ -335,8 +335,9 @@ const handleMessage = (sender_psid, received_message) => {
       user_message = user_message.toLowerCase(); 
 
       switch(user_message) { 
-      case "hi":
-          hiReply(sender_psid);
+       case "hi":
+        console.log('CASE: BUTTON');            
+        buttonReply(sender_psid);
         break;
         case "getstart":
           get_started(sender_psid);
@@ -350,10 +351,7 @@ const handleMessage = (sender_psid, received_message) => {
       case "quick":
         quickReply(sender_psid);
         break;
-      case "button":
-        console.log('CASE: BUTTON');            
-        buttonReply(sender_psid);
-        break;
+     
       case "webview":
         webviewTest(sender_psid);
         break;       
